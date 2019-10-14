@@ -12,7 +12,7 @@ class Admin extends Component {
                 <h2> Painel Admin </h2>
                 <Route path={`/`} component={AdminMenu} />
                 <Route path={`${this.props.match.url}/portifolio`} component={AdminPortifolio} />
-                <p>{JSON.stringify(this.props)}</p>
+
             </div>
         )
     }

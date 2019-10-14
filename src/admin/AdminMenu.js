@@ -5,7 +5,7 @@ const AdminMenu = props => {
     return (
 
         <div className="list-group">
-            <Link to='/adminPortifolio' className="list-group-item list-group-item-action">Portifolio</Link>
+            <Link to='/adminPortifolio' className="list-group-item list-group-item-action active">Portifolio</Link>
         </div>
 
     )
