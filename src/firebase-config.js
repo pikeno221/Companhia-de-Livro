@@ -6,7 +6,7 @@ var firebaseConfig = {
   authDomain: "gabs-company-portifolio.firebaseapp.com",
   databaseURL: "https://gabs-company-portifolio.firebaseio.com",
   projectId: "gabs-company-portifolio",
-  storageBucket: "",
+  storageBucket: "gabs-company-portifolio.appspot.com",
   messagingSenderId: "432123121486",
   appId: "1:432123121486:web:679f716da6fe5625"
 };
@@ -15,6 +15,6 @@ var firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig)
 const config = Rebase.createClass(app.database())
 
-export const stoorage = app.storage();
+export const storage = app.storage();
 
 export default config
