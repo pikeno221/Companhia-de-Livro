@@ -4,10 +4,11 @@ import Rodape from './components/Rodape'
 import Cabecalho from './components/Cabecalho'
 import Inicio from './components/Inicio'
 import Servicos from './components/Servicos'
-import Portifolio from './components/Portifolio'
+import Portifolio from "./components/Portifolio";
 import Precos from './components/Precos'
 import Contato from './components/Contato'
 import Admin from './admin/Admin'
+import Login from './admin/Login'
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/precos' component={Precos} />
           <Route path='/contato' component={Contato} />
           <Route path='/admin' component={Admin} />
+          <Route path='/login' component={Login} />
           
           <Rodape />
         </div>

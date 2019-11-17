@@ -39,11 +39,11 @@ class AdminPortifolio extends Component {
                     })
 
             })
-        }
+    }
 
     render() {
-                    return(
-            <div style = {{ padding: '120px' }} >
+        return (
+            <div style={{ padding: '120px' }} >
                 <h2> Portifolio Administrativo </h2>
 
                 <form onSubmit={this.gravaPortifolio}>
