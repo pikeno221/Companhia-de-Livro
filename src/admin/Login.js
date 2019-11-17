@@ -37,7 +37,7 @@ class Login extends Component {
 
         }
         return (
-            <div style={{ padding: '120px' }} >
+            <div className="container">
 
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email</label>

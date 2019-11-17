@@ -6,18 +6,22 @@ class AdminPortifolio extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            estaGravando: false
+
+        }
         this.gravaPortifolio = this.gravaPortifolio.bind(this)
     }
 
     gravaPortifolio(e) {
-        console.log('galo');
-        console.log(this.titulo.value);
-        console.log(this.descricao.value);
-        console.log(this.imagem.value);
-        e.preventDefault();
+        this.setState({estaGravando: true});
+        const itemPortifolio = {
+            titulo: this.titulo.value,
+            descricao: this.descricao.value,
+            imagem: this.imagem
+        }
 
-
-        const arquivo = this.imagem.files[0];
+        const arquivo = itemPortifolio.imagem.files[0];
         const { name, size, type } = arquivo;
         console.log('passou');
 
@@ -28,22 +32,32 @@ class AdminPortifolio extends Component {
                     .then(downloadURL => {
                         console.log(downloadURL)
                         const novoPortifolio = {
-                            titulo: this.titulo.value,
-                            descricao: this.descricao.value,
+                            titulo: itemPortifolio.titulo,
+                            descricao: itemPortifolio.descricao,
                             imagem: downloadURL
                         }
 
                         config.push('portifolio', {
                             data: novoPortifolio
                         })
+                        this.setState({estaGravando: false})
                     })
 
             })
+
+        e.preventDefault();
     }
 
     render() {
+        if (this.state.estaGravando) {
+            return (
+                <div className="container">
+                    <p><span className="glyphincon glyphincon-refresh"> Aguarde ... </span></p>
+                </div>
+            )
+        }
         return (
-            <div style={{ padding: '120px' }} >
+            <div className="container">
                 <h2> Portifolio Administrativo </h2>
 
                 <form onSubmit={this.gravaPortifolio}>
